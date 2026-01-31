@@ -71,9 +71,9 @@ class _MapWidgetState extends State<MapWidget> with SingleTickerProviderStateMix
             builder: (ctx) => GestureDetector(
               onTap: () => mapState.select(loc),
               child: Container(
-                decoration: BoxDecoration(color: mapState.colorForAqi(loc.aqi), shape: BoxShape.circle, boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 6)]),
+                decoration: BoxDecoration(color: mapState.colorForAqi(loc.aqi), shape: BoxShape.circle),
                 alignment: Alignment.center,
-                child: Text('${loc.aqi}', style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold)),
+                child: Text('${loc.aqi}', style: Theme.of(ctx).textTheme.labelMedium?.copyWith(color: Colors.white)),
               ),
             ),
           )).toList();

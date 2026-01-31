@@ -7,8 +7,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:ecosync/main.dart';
+import 'package:ecosync/state/map_state.dart';
 
 void main() {
   testWidgets('App shows login', (WidgetTester tester) async {
@@ -16,6 +19,12 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: LoginPage()));
 
     // Verify that the login screen is displayed.
-    expect(find.text('EcoSync Login'), findsOneWidget);
+    expect(find.text('Sign in to continue'), findsOneWidget);
+  });
+
+  testWidgets('Appliance tracker calculations', (WidgetTester tester) async {
+    await tester.pumpWidget(MaterialApp(home: Scaffold(body: ApplianceTracker())));
+    expect(find.textContaining('Estimated daily usage'), findsOneWidget);
+    expect(find.textContaining('Estimated monthly bill'), findsOneWidget);
   });
 }

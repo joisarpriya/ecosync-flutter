@@ -22,8 +22,7 @@ class LocationModel {
   });
 
   factory LocationModel.fromDoc(DocumentSnapshot d) {
-    final raw = d.data();
-    final map = raw is Map ? Map<String, dynamic>.from(raw as Map) : <String, dynamic>{};
+    final map = (d.data() as Map<String, dynamic>?) ?? {};
     double parseDouble(dynamic v, double def) {
       if (v == null) return def;
       if (v is num) return v.toDouble();

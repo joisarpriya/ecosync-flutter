@@ -57,12 +57,11 @@ class MapState extends ChangeNotifier {
 
   // AQI helpers
   Color colorForAqi(int aqi) {
-    if (aqi <= 50) return Colors.green;
-    if (aqi <= 100) return Colors.limeAccent.shade400;
-    if (aqi <= 150) return Colors.orange;
-    if (aqi <= 200) return Colors.red;
-    if (aqi <= 300) return Colors.purple;
-    return Colors.brown.shade700;
+    if (aqi <= 50) return const Color(0xFF34A853); // Green
+    if (aqi <= 100) return const Color(0xFFFBBC04); // Yellow
+    if (aqi <= 150) return const Color(0xFFFB8B24); // Orange
+    if (aqi <= 200) return const Color(0xFFEA4335); // Red
+    return const Color(0xFFB00020); // Dark red
   }
 
   // Map marker hue helper

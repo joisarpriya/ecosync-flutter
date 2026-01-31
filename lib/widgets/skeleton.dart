@@ -14,7 +14,7 @@ class Skeleton extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         borderRadius: borderRadius,
-        gradient: LinearGradient(colors: [Colors.grey.shade300, Colors.grey.shade200, Colors.grey.shade300], begin: Alignment(-1, -0.3), end: Alignment(1, 0.3)),
+        color: Colors.grey.shade300,
       ),
     );
   }
